@@ -1,10 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Bungee } from 'next/font/google';
+
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import { dark } from '@clerk/themes';
 
 const inter = Inter({ subsets: ['latin'] });
+const bungee = Bungee({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-bungee',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -26,7 +32,9 @@ export default function RootLayout({
       }}
     >
       <html lang='en'>
-        <body className={inter.className}>{children}</body>
+        <body className={`${inter.className} ${bungee.variable}`}>
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );

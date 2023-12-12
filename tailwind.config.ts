@@ -83,6 +83,7 @@ const config: Config = {
       fontFamily: {
         mirador: ['Mirador'],
         test: ['Catamaran', 'sans-serif'],
+        bungy: ['var(--font-bungee)'],
       },
     },
   },
