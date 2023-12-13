@@ -26,7 +26,7 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         layout: {
-          socialButtonsVariant: 'iconButton',
+          // socialButtonsVariant: 'iconButton',
         },
         baseTheme: dark,
       }}
