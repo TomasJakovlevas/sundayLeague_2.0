@@ -30,8 +30,8 @@ export default function RootLayout({
         },
         // baseTheme: dark,
         elements: {
-          card: 'pt-0 px-0 bg-accent-500 shadow-none gap-6',
-          headerTitle: 'text-primary-500',
+          card: 'pt-0 px-0 bg-accent-500 shadow-none gap-5 xl:gap-6',
+          headerTitle: 'text-lg xl:text-xl text-primary-500',
           headerSubtitle: 'hidden',
           dividerRow: 'hidden',
           socialButtonsIconButton: 'hover:bg-primary-500 border-primary-500',
