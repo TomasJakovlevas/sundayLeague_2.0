@@ -26,9 +26,19 @@ export default function RootLayout({
     <ClerkProvider
       appearance={{
         layout: {
-          // socialButtonsVariant: 'iconButton',
+          socialButtonsVariant: 'iconButton',
         },
-        baseTheme: dark,
+        // baseTheme: dark,
+        elements: {
+          card: 'pt-0 px-0 bg-accent-500 shadow-none gap-6',
+          headerTitle: 'text-primary-500',
+          headerSubtitle: 'hidden',
+          dividerRow: 'hidden',
+          socialButtonsIconButton: 'hover:bg-primary-500 border-primary-500',
+          form: 'hidden',
+          footer: 'hidden',
+          internal: 'hidden',
+        },
       }}
     >
       <html lang='en'>
