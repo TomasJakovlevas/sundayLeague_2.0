@@ -1,10 +1,13 @@
+import { Template } from '@/components/Template/Template';
 import { UserButton } from '@clerk/nextjs';
 
 export default function Home() {
   return (
-    <>
-      <p>Hello</p>
-      <UserButton afterSignOutUrl='http://localhost:3000/sing-in' />
-    </>
+    <Template>
+      <section>
+        <p>Hello</p>
+        <UserButton afterSignOutUrl='http://localhost:3000/sing-in' />
+      </section>
+    </Template>
   );
 }
