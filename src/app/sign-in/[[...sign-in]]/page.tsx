@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer/Footer';
 export default function Page() {
   return (
     <>
-      <main className='px-5 pt-5 flex flex-col bg-accent-500 min-h-screen md:flex md:justify-center xl:px-20 xl:pt-20'>
+      <main className='px-5 pt-5 flex flex-col min-h-screen md:flex md:justify-center xl:px-20 xl:pt-20'>
         <div className='mt-[40px]  flex flex-col items-center flex-1 md:justify-center md:flex-row md:mt-0 gap-8 md:gap-[50px] xl:gap-[100px] xl:mt-0 xl:flex-nowrap 2xl:gap-[150px] transition-all'>
           <div className='xl:w-1/2'>
             <div className='relative h-[250px] w-[250px] md:h-[450px] md:w-[450px] xl:h-[750px] xl:w-[100%]'>

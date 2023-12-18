@@ -43,7 +43,7 @@ export default function RootLayout({
       }}
     >
       <html lang='en'>
-        <body className={`${inter.className} ${bungee.variable}`}>
+        <body className={`${inter.className} ${bungee.variable} bg-accent-500`}>
           {children}
         </body>
       </html>
