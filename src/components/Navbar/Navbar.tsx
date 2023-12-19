@@ -11,7 +11,7 @@ export const Navbar = () => {
   return (
     <div
       className={`mx-auto border px-5 h-full transition-all duration-500 w-full flex items-center relative ${
-        navbarScroll && 'md:w-3/4'
+        navbarScroll ? 'md:w-3/4' : ''
       }`}
     >
       <div className='border w-full flex items-center justify-between'>

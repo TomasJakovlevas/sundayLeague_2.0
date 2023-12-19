@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter, Bungee, Roboto } from 'next/font/google';
+import { Bungee, Roboto } from 'next/font/google';
 
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
-import { dark } from '@clerk/themes';
+
+import { NextUiProvider } from '@/providers/nextUiProvider';
 
 // const inter = Inter({ subsets: ['latin'] });
 const roboto = Roboto({
@@ -51,7 +52,7 @@ export default function RootLayout({
         <body
           className={`${roboto.className} ${bungee.variable} bg-accent-500`}
         >
-          {children}
+          <NextUiProvider>{children}</NextUiProvider>
         </body>
       </html>
     </ClerkProvider>
