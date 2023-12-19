@@ -81,6 +81,7 @@ const config: Config = {
           900: '#324517',
           950: '#19220B',
         },
+        white: '#F9F6EE',
       },
       fontFamily: {
         mirador: ['Mirador'],

@@ -50,7 +50,7 @@ export default function RootLayout({
     >
       <html lang='en'>
         <body
-          className={`${roboto.className} ${bungee.variable} bg-accent-500`}
+          className={`${roboto.className} ${bungee.variable} bg-white text-primary-500`}
         >
           <NextUiProvider>{children}</NextUiProvider>
         </body>
