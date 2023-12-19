@@ -1,11 +1,16 @@
 import type { Metadata } from 'next';
-import { Inter, Bungee } from 'next/font/google';
+import { Inter, Bungee, Roboto } from 'next/font/google';
 
 import { ClerkProvider } from '@clerk/nextjs';
 import './globals.css';
 import { dark } from '@clerk/themes';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-roboto',
+});
 const bungee = Bungee({
   subsets: ['latin'],
   weight: '400',
@@ -43,7 +48,9 @@ export default function RootLayout({
       }}
     >
       <html lang='en'>
-        <body className={`${inter.className} ${bungee.variable} bg-accent-500`}>
+        <body
+          className={`${roboto.className} ${bungee.variable} bg-accent-500`}
+        >
           {children}
         </body>
       </html>
