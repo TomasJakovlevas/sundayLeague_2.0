@@ -32,7 +32,7 @@ export const Navbar = () => {
       height={'50px'}
       maxWidth='xl'
       onMenuOpenChange={setMenuIsOpen}
-      className='border-b '
+      className='border-b'
     >
       <NavbarBrand>
         <span>SL</span>
@@ -42,21 +42,27 @@ export const Navbar = () => {
         className='sm:hidden'
       />
 
-      <NavbarContent className='hidden sm:flex gap-6 ' justify='center'>
+      <NavbarContent
+        className='hidden sm:flex gap-6 font-medium'
+        justify='center'
+      >
         {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`} className='font-medium'>
+          <NavbarItem key={`${item}-${index}`} className=''>
             <Link href='#'>{item}</Link>
           </NavbarItem>
         ))}
-        <NavbarItem>
-          {isSignedIn ? (
-            <Button color='secondary' onClick={() => signOut()}>
-              Sign out
+
+        {!isSignedIn && (
+          <NavbarItem>
+            <Button
+              variant='ghost'
+              color='primary'
+              onClick={() => router.push('/sign-in')}
+            >
+              Sign in
             </Button>
-          ) : (
-            <Button onClick={() => router.push('/sign-in')}>Sing in</Button>
-          )}
-        </NavbarItem>
+          </NavbarItem>
+        )}
       </NavbarContent>
 
       <NavbarMenu className='gap-8'>
