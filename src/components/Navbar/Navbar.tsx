@@ -1,7 +1,8 @@
 'use client';
 
-import useNavbarScroll from '@/app/hooks/useNavbarScroll';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+
 import {
   Navbar as Nav,
   NavbarBrand,
@@ -11,10 +12,15 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
+  Button,
 } from '@nextui-org/react';
 
+import { useUser, useClerk } from '@clerk/nextjs';
+
 export const Navbar = () => {
-  const navbarScroll = useNavbarScroll();
+  const { isSignedIn } = useUser();
+  const { signOut } = useClerk();
+  const router = useRouter();
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -33,29 +39,38 @@ export const Navbar = () => {
       </NavbarBrand>
       <NavbarMenuToggle
         aria-label={menuIsOpen ? 'Close menu' : 'Open menu'}
-        className='sm:hidden bold'
+        className='sm:hidden'
       />
 
-      <NavbarContent className='hidden sm:flex gap-6' justify='center'>
+      <NavbarContent className='hidden sm:flex gap-6 ' justify='center'>
         {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
+          <NavbarItem key={`${item}-${index}`} className='font-medium'>
             <Link href='#'>{item}</Link>
           </NavbarItem>
         ))}
+        <NavbarItem>
+          {isSignedIn ? (
+            <Button color='secondary' onClick={() => signOut()}>
+              Sign out
+            </Button>
+          ) : (
+            <Button onClick={() => router.push('/sign-in')}>Sing in</Button>
+          )}
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu className='gap-8'>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2
-                  ? 'primary'
-                  : index === menuItems.length - 1
-                  ? 'danger'
-                  : 'foreground'
-              }
-              className='w-full'
+              // color={
+              //   index === 2
+              //     ? 'primary'
+              //     : index === menuItems.length - 1
+              //     ? 'danger'
+              //     : 'foreground'
+              // }
+              className='w-full font-medium'
               href='#'
               size='lg'
             >

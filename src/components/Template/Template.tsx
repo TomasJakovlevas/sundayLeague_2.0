@@ -1,4 +1,3 @@
-import React from 'react';
 import { Navbar } from '../Navbar/Navbar';
 
 export const Template = ({ children }: { children: React.ReactNode }) => {
