@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import {
   Navbar as Nav,
@@ -21,10 +21,28 @@ export const Navbar = () => {
   const { isSignedIn } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();
+  const pathname = usePathname();
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const menuItems = ['Profile', 'Dashboard', 'Activity', 'Analytics', 'System'];
+  const menuItems = [
+    {
+      title: 'Profile',
+      route: '/profile',
+    },
+    {
+      title: 'Dashboard',
+      route: '/dashboard',
+    },
+    {
+      title: 'Activity',
+      route: '/activity',
+    },
+    {
+      title: 'System',
+      route: '/system',
+    },
+  ];
 
   return (
     <Nav
@@ -35,7 +53,9 @@ export const Navbar = () => {
       className='border-b'
     >
       <NavbarBrand>
-        <span>SL</span>
+        <Link href='/'>
+          <span>SL</span>
+        </Link>
       </NavbarBrand>
       <NavbarMenuToggle
         aria-label={menuIsOpen ? 'Close menu' : 'Open menu'}
@@ -47,8 +67,11 @@ export const Navbar = () => {
         justify='center'
       >
         {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`} className=''>
-            <Link href='#'>{item}</Link>
+          <NavbarItem
+            key={`${item.title}-${index}`}
+            isActive={item.route === pathname}
+          >
+            <Link href={item.route}>{item.title}</Link>
           </NavbarItem>
         ))}
 
@@ -67,20 +90,12 @@ export const Navbar = () => {
 
       <NavbarMenu className='gap-8'>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              // color={
-              //   index === 2
-              //     ? 'primary'
-              //     : index === menuItems.length - 1
-              //     ? 'danger'
-              //     : 'foreground'
-              // }
-              className='w-full font-medium'
-              href='#'
-              size='lg'
-            >
-              {item}
+          <NavbarMenuItem
+            key={`${item.title}-${index}`}
+            isActive={item.route === pathname}
+          >
+            <Link className='w-full font-medium' href={item.route} size='lg'>
+              {item.title}
             </Link>
           </NavbarMenuItem>
         ))}
