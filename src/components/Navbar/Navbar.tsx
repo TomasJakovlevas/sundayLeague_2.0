@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import {
+  Avatar,
   Navbar as Nav,
   NavbarBrand,
   NavbarContent,
@@ -19,7 +20,7 @@ import Link from 'next/link';
 import { useUser, useClerk } from '@clerk/nextjs';
 
 export const Navbar = () => {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();
   const pathname = usePathname();
@@ -44,6 +45,8 @@ export const Navbar = () => {
       route: '/system',
     },
   ];
+
+  console.log(user);
 
   return (
     <Nav
@@ -87,7 +90,11 @@ export const Navbar = () => {
             </Button>
           </NavbarItem>
         ) : (
-          'profile dropdown'
+          <Avatar
+            name={user.firstName || ''}
+            src={user.imageUrl || undefined}
+            showFallback
+          />
         )}
       </NavbarContent>
 
