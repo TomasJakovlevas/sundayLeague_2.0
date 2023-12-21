@@ -11,9 +11,10 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Link,
   Button,
 } from '@nextui-org/react';
+
+import Link from 'next/link';
 
 import { useUser, useClerk } from '@clerk/nextjs';
 
@@ -94,7 +95,7 @@ export const Navbar = () => {
             key={`${item.title}-${index}`}
             isActive={item.route === pathname}
           >
-            <Link className='w-full font-medium' href={item.route} size='lg'>
+            <Link className='w-full' href={item.route}>
               {item.title}
             </Link>
           </NavbarMenuItem>
