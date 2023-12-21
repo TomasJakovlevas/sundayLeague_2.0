@@ -13,6 +13,11 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Button,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Divider,
 } from '@nextui-org/react';
 
 import Link from 'next/link';
@@ -45,8 +50,6 @@ export const Navbar = () => {
       route: '/system',
     },
   ];
-
-  console.log(user);
 
   return (
     <Nav
@@ -90,11 +93,30 @@ export const Navbar = () => {
             </Button>
           </NavbarItem>
         ) : (
-          <Avatar
-            name={user.firstName || ''}
-            src={user.imageUrl || undefined}
-            showFallback
-          />
+          <Dropdown>
+            <DropdownTrigger>
+              <Avatar
+                name={user.firstName || ''}
+                src={user.imageUrl || undefined}
+                showFallback
+                className='cursor-pointer'
+                isBordered
+                color='primary'
+              />
+            </DropdownTrigger>
+            <DropdownMenu variant='bordered'>
+              <DropdownItem color='primary'>
+                <Link href={'/settings'}>Settings</Link>
+              </DropdownItem>
+              <DropdownItem
+                onClick={() => signOut(() => router.push('/'))}
+                className='text-danger'
+                color='danger'
+              >
+                Log out
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         )}
       </NavbarContent>
 
@@ -109,6 +131,32 @@ export const Navbar = () => {
             </Link>
           </NavbarMenuItem>
         ))}
+        <Divider />
+
+        {/* TODO: add avatar maybe? */}
+        {!isSignedIn ? (
+          <NavbarMenuItem>
+            <Button
+              variant='ghost'
+              color='primary'
+              onClick={() => router.push('/sign-in')}
+            >
+              Sign in
+            </Button>
+          </NavbarMenuItem>
+        ) : (
+          <>
+            <NavbarMenuItem>
+              <Link href={'/settings'}>Settings</Link>
+            </NavbarMenuItem>
+            <NavbarMenuItem
+              onClick={() => signOut(() => router.push('/'))}
+              className='text-danger'
+            >
+              Log out
+            </NavbarMenuItem>
+          </>
+        )}
       </NavbarMenu>
     </Nav>
   );
