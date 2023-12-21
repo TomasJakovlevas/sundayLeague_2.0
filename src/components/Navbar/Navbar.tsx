@@ -48,7 +48,7 @@ export const Navbar = () => {
   return (
     <Nav
       shouldHideOnScroll={true}
-      height={'50px'}
+      height={'64px'}
       maxWidth='xl'
       onMenuOpenChange={setMenuIsOpen}
       className='border-b'
@@ -76,7 +76,7 @@ export const Navbar = () => {
           </NavbarItem>
         ))}
 
-        {!isSignedIn && (
+        {!isSignedIn ? (
           <NavbarItem>
             <Button
               variant='ghost'
@@ -86,6 +86,8 @@ export const Navbar = () => {
               Sign in
             </Button>
           </NavbarItem>
+        ) : (
+          'profile dropdown'
         )}
       </NavbarContent>
 
