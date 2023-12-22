@@ -1,4 +1,4 @@
-import { Template } from '@/components/Template/Template';
+import { Template } from '@/components/Templates/Template';
 import { currentUser } from '@clerk/nextjs';
 
 export default async function DashboardPage() {

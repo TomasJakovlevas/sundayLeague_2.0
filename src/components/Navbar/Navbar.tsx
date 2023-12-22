@@ -34,30 +34,18 @@ export const Navbar = () => {
 
   const menuItems = [
     {
-      title: 'Profile',
-      route: '/profile',
-    },
-    {
       title: 'Dashboard',
       route: '/dashboard',
-    },
-    {
-      title: 'Activity',
-      route: '/activity',
-    },
-    {
-      title: 'System',
-      route: '/system',
     },
   ];
 
   return (
     <Nav
-      shouldHideOnScroll={true}
+      shouldHideOnScroll={false}
       height={'64px'}
       maxWidth='xl'
       onMenuOpenChange={setMenuIsOpen}
-      className='border-b'
+      className='md:border-b'
     >
       <NavbarBrand>
         <Link href='/'>
@@ -133,7 +121,6 @@ export const Navbar = () => {
         ))}
         <Divider />
 
-        {/* TODO: add avatar maybe? */}
         {!isSignedIn ? (
           <NavbarMenuItem>
             <Button
