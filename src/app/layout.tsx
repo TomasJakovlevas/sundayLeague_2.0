@@ -38,10 +38,10 @@ export default function RootLayout({
         elements: {
           rootBox: 'w-full',
           card: 'max-w-none mx-0 w-full pt-0 px-0 bg-accent-500 shadow-none gap-5 xl:gap-6',
-          headerTitle: 'text-lg xl:text-xl text-primary-500',
+          headerTitle: 'text-lg xl:text-xl text-primary-700',
           headerSubtitle: 'hidden',
           dividerRow: 'hidden',
-          socialButtonsIconButton: 'hover:bg-primary-500 border-primary-500',
+          socialButtonsIconButton: 'hover:bg-primary-400 border-primary-700',
           form: 'hidden',
           footer: 'hidden',
           internal: 'hidden',
@@ -50,7 +50,7 @@ export default function RootLayout({
     >
       <html lang='en'>
         <body
-          className={`${roboto.className} ${bungee.variable} light bg-white text-primary-500`}
+          className={`${roboto.className} ${bungee.variable} light bg-white text-primary-700`}
         >
           <NextUiProvider>{children}</NextUiProvider>
         </body>

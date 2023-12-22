@@ -18,7 +18,7 @@ export default function Page() {
             </div>
           </div>
           <div className='flex flex-col gap-5 xl:gap-6 xl:w-1/2'>
-            <div className='text-primary-500 xl:w-full xl:w-fit'>
+            <div className='xl:w-full xl:w-fit'>
               <h1 className='text-3xl mb-8 font-black font-bungy flex flex-wrap gap-2 xl:text-8xl mb-8 xl:flex-col xl:leading-none'>
                 <span>SUNDAY</span>
                 <span>LEAGUE</span>
@@ -32,7 +32,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <footer className='m-5 text-primary-500'>
+        <footer className='m-5'>
           <Footer />
         </footer>
       </main>
