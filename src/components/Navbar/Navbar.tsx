@@ -23,12 +23,14 @@ import {
 import Link from 'next/link';
 
 import { useUser, useClerk } from '@clerk/nextjs';
+import useNavbarScroll from '@/hooks/useNavbarScroll';
 
 export const Navbar = () => {
   const { isSignedIn, user } = useUser();
   const { signOut } = useClerk();
   const router = useRouter();
   const pathname = usePathname();
+  const scrolled = useNavbarScroll();
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -45,7 +47,9 @@ export const Navbar = () => {
       height={'64px'}
       maxWidth='xl'
       onMenuOpenChange={setMenuIsOpen}
-      className='md:border-b'
+      className={`backdrop-blur-sm md:border-b transition-colors duration-1000  ${
+        scrolled ? 'bg-[#c7c4be99]' : 'bg-[#F9F6EE99]'
+      }`}
     >
       <NavbarBrand>
         <Link href='/'>
