@@ -51,10 +51,6 @@ export const InnerNavbar = ({ ...rest }: CustomDivProps) => {
             />
           </DropdownMenu>
         </Dropdown>
-
-        {/* <NavbarMenu className='top-[114px]'>
-          <NavbarMenuItem>Menu items</NavbarMenuItem>
-        </NavbarMenu> */}
       </Navbar>
     </div>
   );
