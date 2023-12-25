@@ -1,8 +1,10 @@
+import { InnerNavbar } from '../InnerNavbar/InnerNavbar';
+
 export const MainTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className='relative'>
-      <div className='sticky top-[64px] backdrop-blur-sm bg-[#F9F6EE99]'>1</div>
-      <div className='h-[200vh] bg-[red]'>
+      <InnerNavbar className='sticky top-[64px] sm:hidden' />
+      <div className='h-[200vh] bg-[red] p-6'>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus,
         veniam accusantium deleniti at amet deserunt atque natus quae quod velit
         consequatur modi culpa, eaque tenetur adipisci neque quidem debitis
