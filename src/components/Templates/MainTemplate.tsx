@@ -4,9 +4,7 @@ export const MainTemplate = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className='relative sm:flex sm:gap-8'>
       <InnerNavbar className='sticky top-[64px] sm:hidden' />
-      <div className='hidden sm:block sticky top-[64px] border h-full'>
-        menu items
-      </div>
+
       <div className='h-[200vh] bg-[red] p-6 md:px-0'>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus,
         veniam accusantium deleniti at amet deserunt atque natus quae quod velit
