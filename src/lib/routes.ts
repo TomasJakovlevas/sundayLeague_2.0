@@ -1,5 +1,12 @@
 import { LinkType } from '@/types';
 
+export const mainNavRoutes: LinkType[] = [
+  {
+    title: 'Dashboard',
+    route: '/dashboard',
+  },
+];
+
 export const mainPageRoutes: LinkType[] = [
   {
     title: 'Home',

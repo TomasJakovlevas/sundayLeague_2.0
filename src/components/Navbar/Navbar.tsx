@@ -21,11 +21,10 @@ import {
 } from '@nextui-org/react';
 
 import Link from 'next/link';
-
 import { useUser, useClerk } from '@clerk/nextjs';
 import useNavbarScroll from '@/hooks/useNavbarScroll';
-
 import SundayLeagueLogo from '@/assets/icons/sundayLeague.svg';
+import { mainNavRoutes } from '@/lib/routes';
 
 export const Navbar = () => {
   const { isSignedIn, user } = useUser();
@@ -35,13 +34,6 @@ export const Navbar = () => {
   const scrolled = useNavbarScroll();
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const menuItems = [
-    {
-      title: 'Dashboard',
-      route: '/dashboard',
-    },
-  ];
 
   return (
     <Nav
@@ -67,7 +59,7 @@ export const Navbar = () => {
         className='hidden sm:flex gap-6 font-medium'
         justify='center'
       >
-        {menuItems.map((item, index) => (
+        {mainNavRoutes.map((item, index) => (
           <NavbarItem
             key={`${item.title}-${index}`}
             isActive={item.route === pathname}
@@ -115,7 +107,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu className='gap-8'>
-        {menuItems.map((item, index) => (
+        {mainNavRoutes.map((item, index) => (
           <NavbarMenuItem
             key={`${item.title}-${index}`}
             isActive={item.route === pathname}
