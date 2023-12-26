@@ -1,7 +1,8 @@
 import { MainTemplate } from '@/components/Templates/MainTemplate';
 import { Template } from '@/components/Templates/Template';
+import React from 'react';
 
-export default function Home() {
+const page = () => {
   const pageRoutes = [
     {
       title: 'Home',
@@ -24,9 +25,12 @@ export default function Home() {
       route: '/my-games',
     },
   ];
+
   return (
     <Template>
-      <MainTemplate menuItems={pageRoutes}>va</MainTemplate>
+      <MainTemplate menuItems={pageRoutes}>Upcoming games</MainTemplate>
     </Template>
   );
-}
+};
+
+export default page;
