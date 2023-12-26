@@ -45,7 +45,7 @@ export const Navbar = () => {
     <Nav
       shouldHideOnScroll={false}
       height={'64px'}
-      maxWidth='xl'
+      maxWidth='2xl'
       onMenuOpenChange={setMenuIsOpen}
       className={`backdrop-blur-sm backdrop-saturate-100 md:border-b transition-colors duration-1000  ${
         scrolled ? 'bg-[#c7c4be99]' : 'bg-[#F9F6EE99]'
