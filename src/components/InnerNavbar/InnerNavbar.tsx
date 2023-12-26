@@ -8,13 +8,9 @@ import {
   DropdownMenu,
   DropdownTrigger,
   Navbar,
-  NavbarMenu,
-  NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
-import { Listbox, ListboxSection, ListboxItem } from '@nextui-org/listbox';
-
-import Link from 'next/link';
+import { Listbox, ListboxItem } from '@nextui-org/listbox';
 
 import { usePathname, useRouter } from 'next/navigation';
 import { HTMLAttributes, useState } from 'react';
