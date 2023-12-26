@@ -25,6 +25,8 @@ import Link from 'next/link';
 import { useUser, useClerk } from '@clerk/nextjs';
 import useNavbarScroll from '@/hooks/useNavbarScroll';
 
+import SundayLeagueLogo from '@/assets/icons/sundayLeague.svg';
+
 export const Navbar = () => {
   const { isSignedIn, user } = useUser();
   const { signOut } = useClerk();
@@ -53,7 +55,7 @@ export const Navbar = () => {
     >
       <NavbarBrand>
         <Link href='/'>
-          <span>SL</span>
+          <SundayLeagueLogo className='h-7 w-[18px] sm:h-10 sm:w-[25px]' />
         </Link>
       </NavbarBrand>
       <NavbarMenuToggle
