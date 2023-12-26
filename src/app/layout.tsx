@@ -37,7 +37,7 @@ export default function RootLayout({
         // baseTheme: dark,
         elements: {
           rootBox: 'w-full',
-          card: 'max-w-none mx-0 w-full pt-0 px-0 bg-accent-500 shadow-none gap-5 xl:gap-6',
+          card: 'max-w-none mx-0 w-full pt-0 px-0 bg-white shadow-none gap-5 xl:gap-6',
           headerTitle: 'text-lg xl:text-xl text-primary-700',
           headerSubtitle: 'hidden',
           dividerRow: 'hidden',
