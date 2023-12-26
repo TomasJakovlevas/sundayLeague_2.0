@@ -1,6 +1,7 @@
 'use client';
 
 import useNavbarScroll from '@/hooks/useNavbarScroll';
+import { LinkType } from '@/types';
 import {
   Dropdown,
   DropdownItem,
@@ -11,16 +12,18 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
-import { HTMLAttributes, useRef, useState } from 'react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { HTMLAttributes, useState } from 'react';
 
 interface CustomDivProps extends HTMLAttributes<HTMLDivElement> {
-  // TODO: accept menut items list
-  // menuItems: [];
+  menuItems: LinkType[];
 }
 
-export const InnerNavbar = ({ ...rest }: CustomDivProps) => {
+export const InnerNavbar = ({ menuItems, ...rest }: CustomDivProps) => {
   const scrolled = useNavbarScroll();
-
+  const router = useRouter();
+  const pathname = usePathname();
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   return (
@@ -44,12 +47,18 @@ export const InnerNavbar = ({ ...rest }: CustomDivProps) => {
               />
             </DropdownTrigger>
             <DropdownMenu variant='bordered'>
-              <DropdownItem
-                className='w-[calc(100vw-40px)]'
-                textValue='Menu Item'
-                title='Menu Item '
-                color='primary'
-              />
+              {menuItems.map((item) => (
+                <DropdownItem
+                  onClick={() => router.push(item.route)}
+                  key={item.route}
+                  className={`w-[calc(100vw-40px)] ${
+                    item.route === pathname ? 'border border-primary-500' : ''
+                  }`}
+                  textValue='Menu Item'
+                  title={item.title}
+                  color='primary'
+                />
+              ))}
             </DropdownMenu>
           </Dropdown>
         </Navbar>
