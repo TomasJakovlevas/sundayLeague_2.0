@@ -12,7 +12,10 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@nextui-org/react';
+import { Listbox, ListboxSection, ListboxItem } from '@nextui-org/listbox';
+
 import Link from 'next/link';
+
 import { usePathname, useRouter } from 'next/navigation';
 import { HTMLAttributes, useState } from 'react';
 
@@ -63,8 +66,28 @@ export const InnerNavbar = ({ menuItems, ...rest }: CustomDivProps) => {
           </Dropdown>
         </Navbar>
       </div>
-      <div className='hidden sm:block sticky top-[64px] border h-full'>
-        menu items
+
+      <div className='hidden sm:block mt-6 sticky top-[88px] h-full w-1/4 border-small rounded-small px-1 py-2'>
+        <Listbox
+          aria-label='Actions'
+          onAction={(key) => router.push(key.toString())}
+          shouldFocusOnHover
+          variant='bordered'
+          color='primary'
+        >
+          {menuItems.map((item) => (
+            <ListboxItem
+              key={item.route}
+              className={`${
+                item.route === pathname
+                  ? 'border border-[2px] border-primary-500'
+                  : ''
+              }`}
+            >
+              {item.title}
+            </ListboxItem>
+          ))}
+        </Listbox>
       </div>
     </>
   );
