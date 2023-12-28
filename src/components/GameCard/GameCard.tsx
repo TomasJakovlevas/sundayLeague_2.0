@@ -9,7 +9,7 @@ import {
 
 const GameCard = () => {
   return (
-    <Card isPressable className='text-primary-700'>
+    <Card isPressable className='text-primary-700 w-full'>
       <CardHeader className='flex items-start gap-3 flex border'>
         <Image
           alt='nextui logo'

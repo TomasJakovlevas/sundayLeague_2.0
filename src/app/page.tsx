@@ -11,9 +11,9 @@ export default function Home() {
         <div className='border mb-5'>
           <DateRanges />
         </div>
-        <div className='border flex flex-col gap-5'>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <div key={index} className='border w-fit'>
+        <div className='border grid gap-5 grid-cols-2'>
+          {Array.from({ length: 20 }).map((_, index) => (
+            <div key={index} className='border w-full'>
               <GameCard />
             </div>
           ))}
