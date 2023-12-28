@@ -22,7 +22,7 @@ export const MainTemplate = ({ children, menuItems }: MainTemplateProps) => {
       />
 
       <div className='p-6 w-full sm:px-0 '>
-        <h1 className='text-3xl font-extrabold mb-4'>{activeRoute?.title}</h1>
+        <h1 className='text-3xl font-extrabold mb-6'>{activeRoute?.title}</h1>
         {children}
       </div>
     </section>
