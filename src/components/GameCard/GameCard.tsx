@@ -20,15 +20,20 @@ const GameCard = () => {
   return (
     <>
       <Card isPressable onPress={onOpen} className='text-primary-700 w-full'>
-        <CardHeader className='flex items-start gap-3 flex border'>
+        <CardHeader className='flex items-start gap-3 flex'>
           <GameCardHeader />
         </CardHeader>
 
-        <CardBody className='flex flex-col gap-3 border'>
+        <CardBody className='flex flex-col gap-3'>
           <GameCardBody />
         </CardBody>
       </Card>
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange} size='4xl'>
+      <Modal
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        size='4xl'
+        scrollBehavior='outside'
+      >
         <ModalContent>
           <ModalBody>
             <GameCardPreview />

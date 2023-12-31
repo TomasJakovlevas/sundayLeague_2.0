@@ -1,29 +1,8 @@
-'use client';
-
-import { useCallback } from 'react';
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableColumn,
-  TableHeader,
-  TableRow,
-} from '@nextui-org/react';
-
-type ColumnType = {
-  key: string;
-  label: string;
-};
-
-type RowType = {
-  key: string;
-  player: string;
-  priority?: boolean;
-};
+import { Divider } from '@nextui-org/react';
+import { GameCardTable } from './GameCardTable';
 
 export const GameCardList = () => {
-  const columns: ColumnType[] = [
+  const columns = [
     {
       key: 'player',
       label: 'PLAYER',
@@ -34,7 +13,7 @@ export const GameCardList = () => {
       label: 'PRIORITY',
     },
   ];
-  const rows: RowType[] = [
+  const rows = [
     {
       key: '1',
       player: 'Tony Reichert',
@@ -54,53 +33,70 @@ export const GameCardList = () => {
       key: '4',
       player: 'William Howard',
     },
-  ];
-
-  const renderCell = useCallback(
-    (user: RowType, columnKey: string | number) => {
-      const cellValue = user[columnKey as keyof RowType];
-
-      switch (columnKey) {
-        case 'priority':
-          return cellValue ? (
-            <div className='flex items-center justify-center'>
-              <div className='w-[20px] h-[20px] border border-[red]'>
-                {
-                  // TODO: Type icon
-                }
-              </div>
-            </div>
-          ) : null;
-        default:
-          return cellValue;
-      }
+    {
+      key: '11',
+      player: 'Tony Reichert',
+      priority: true,
     },
-    []
-  );
+    {
+      key: '22',
+      player: 'Zoey Lang',
+      priority: true,
+    },
+    {
+      key: '33',
+      player: 'Jane Fisher',
+      priority: true,
+    },
+    {
+      key: '44',
+      player: 'William Howard',
+    },
+    {
+      key: '12',
+      player: 'Tony Reichert',
+      priority: true,
+    },
+    {
+      key: '23',
+      player: 'Zoey Lang',
+      priority: true,
+    },
+    {
+      key: '34',
+      player: 'Jane Fisher',
+      priority: true,
+    },
+    {
+      key: '45',
+      player: 'William Howard',
+    },
+    {
+      key: '11a',
+      player: 'Tony Reichert',
+      priority: true,
+    },
+    {
+      key: '2w',
+      player: 'Zoey Lang',
+      priority: true,
+    },
+    {
+      key: '3e',
+      player: 'Jane Fisher',
+      priority: true,
+    },
+    {
+      key: '4r',
+      player: 'William Howard',
+    },
+  ];
 
   return (
     <div>
-      <Table isStriped aria-label='players_table'>
-        <TableHeader columns={columns}>
-          {(column) => (
-            <TableColumn
-              key={column.key}
-              className={column.key === 'priority' ? 'w-[0px]' : ''}
-            >
-              {column.label}
-            </TableColumn>
-          )}
-        </TableHeader>
-        <TableBody items={rows}>
-          {(item) => (
-            <TableRow key={item.key}>
-              {(columnKey) => (
-                <TableCell>{renderCell(item, columnKey)}</TableCell>
-              )}
-            </TableRow>
-          )}
-        </TableBody>
-      </Table>
+      <GameCardTable title='Active' columns={columns} rows={rows} />
+      <Divider className='my-6' />
+      <GameCardTable title='Queue' columns={columns} rows={rows} />
     </div>
   );
 };
