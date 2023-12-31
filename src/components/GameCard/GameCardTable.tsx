@@ -32,8 +32,6 @@ export const GameCardTable = ({ title, columns, rows }: GameCardTableProps) => {
     (user: RowType, columnKey: string | number) => {
       const cellValue = user[columnKey as keyof RowType];
 
-      console.log(rows);
-
       switch (columnKey) {
         case 'priority':
           return cellValue ? (
