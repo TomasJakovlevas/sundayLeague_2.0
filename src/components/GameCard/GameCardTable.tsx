@@ -59,7 +59,7 @@ export const GameCardTable = ({ title, columns, rows }: GameCardTableProps) => {
           {(column) => (
             <TableColumn
               key={column.key}
-              className={column.uiFit ? 'w-[0px] text-center' : ''}
+              className={column.uiFit ? 'w-[0px]' : ''}
             >
               {column.label}
             </TableColumn>
