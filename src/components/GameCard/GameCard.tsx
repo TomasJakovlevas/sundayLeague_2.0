@@ -32,7 +32,7 @@ const GameCard = () => {
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         size='4xl'
-        scrollBehavior='outside'
+        scrollBehavior='inside'
       >
         <ModalContent>
           <ModalBody>
