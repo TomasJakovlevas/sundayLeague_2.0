@@ -11,12 +11,14 @@ import { useCallback } from 'react';
 type ColumnType = {
   key: string;
   label: string;
+  uiFit?: boolean;
 };
 
 type RowType = {
   key: string;
   player: string;
   priority?: boolean;
+  timeStamp?: string;
 };
 
 type GameCardTableProps = {
@@ -30,6 +32,8 @@ export const GameCardTable = ({ title, columns, rows }: GameCardTableProps) => {
     (user: RowType, columnKey: string | number) => {
       const cellValue = user[columnKey as keyof RowType];
 
+      console.log(rows);
+
       switch (columnKey) {
         case 'priority':
           return cellValue ? (
@@ -41,8 +45,9 @@ export const GameCardTable = ({ title, columns, rows }: GameCardTableProps) => {
               </div>
             </div>
           ) : null;
+
         default:
-          return cellValue;
+          return <span className='whitespace-nowrap'>{cellValue}</span>;
       }
     },
     []
@@ -51,12 +56,12 @@ export const GameCardTable = ({ title, columns, rows }: GameCardTableProps) => {
   return (
     <>
       <h3 className='mb-1'>{title}</h3>
-      <Table isStriped aria-label='players_table' removeWrapper>
+      <Table isStriped removeWrapper>
         <TableHeader columns={columns}>
           {(column) => (
             <TableColumn
               key={column.key}
-              className={column.key === 'priority' ? 'w-[0px]' : ''}
+              className={column.uiFit ? 'w-[0px] text-center' : ''}
             >
               {column.label}
             </TableColumn>

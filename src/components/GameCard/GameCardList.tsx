@@ -2,6 +2,7 @@ import { Divider } from '@nextui-org/react';
 import { GameCardTable } from './GameCardTable';
 
 export const GameCardList = () => {
+  const timeStampDate = new Date();
   const columns = [
     {
       key: 'player',
@@ -9,8 +10,14 @@ export const GameCardList = () => {
     },
 
     {
+      key: 'timeStamp',
+      label: 'TIME',
+      uiFit: true,
+    },
+    {
       key: 'priority',
       label: 'PRIORITY',
+      uiFit: true,
     },
   ];
   const rows = [
@@ -18,77 +25,14 @@ export const GameCardList = () => {
       key: '1',
       player: 'Tony Reichert',
       priority: true,
-    },
-    {
-      key: '2',
-      player: 'Zoey Lang',
-      priority: true,
-    },
-    {
-      key: '3',
-      player: 'Jane Fisher',
-      priority: true,
-    },
-    {
-      key: '4',
-      player: 'William Howard',
-    },
-    {
-      key: '11',
-      player: 'Tony Reichert',
-      priority: true,
-    },
-    {
-      key: '22',
-      player: 'Zoey Lang',
-      priority: true,
-    },
-    {
-      key: '33',
-      player: 'Jane Fisher',
-      priority: true,
-    },
-    {
-      key: '44',
-      player: 'William Howard',
-    },
-    {
-      key: '12',
-      player: 'Tony Reichert',
-      priority: true,
-    },
-    {
-      key: '23',
-      player: 'Zoey Lang',
-      priority: true,
-    },
-    {
-      key: '34',
-      player: 'Jane Fisher',
-      priority: true,
-    },
-    {
-      key: '45',
-      player: 'William Howard',
-    },
-    {
-      key: '11a',
-      player: 'Tony Reichert',
-      priority: true,
-    },
-    {
-      key: '2w',
-      player: 'Zoey Lang',
-      priority: true,
-    },
-    {
-      key: '3e',
-      player: 'Jane Fisher',
-      priority: true,
-    },
-    {
-      key: '4r',
-      player: 'William Howard',
+      timeStamp: timeStampDate.toLocaleTimeString('en', {
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        hourCycle: 'h24',
+      }),
     },
   ];
 
