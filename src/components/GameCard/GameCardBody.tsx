@@ -38,9 +38,9 @@ export const GameCardBody = () => {
           }
         </div>
         <span className='text-lg font-semibold'>3/14</span>
-        <Button size='sm' variant='flat' color='primary'>
+        {/* <Button size='sm' variant='flat' color='primary'>
           Join
-        </Button>
+        </Button> */}
       </div>
     </>
   );
