@@ -5,11 +5,11 @@ import { GameCardList } from './GameCardList';
 export const GameCardPreview = () => {
   return (
     <div>
-      <div className='flex items-start gap-3 flex py-3'>
+      <div className='flex items-start py-3 gap-2 sm:gap-3 '>
         <GameCardHeader />
       </div>
 
-      <div className='flex flex-col gap-3 py-3'>
+      <div className='flex flex-col py-3 gap-2 sm:gap-3'>
         <GameCardBody />
         <GameCardList />
       </div>
