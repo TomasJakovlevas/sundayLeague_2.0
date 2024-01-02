@@ -20,7 +20,7 @@ export default async function Home() {
           <DateRanges />
         </div>
 
-        <div className='border grid gap-5 grid-cols-2'>
+        <div className='border grid gap-3 grid-cols-1 md:gap-5 md:grid-cols-2'>
           {games.map((_, index) => (
             <div key={index} className='border w-full'>
               <GameCard />
