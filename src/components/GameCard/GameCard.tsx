@@ -20,11 +20,11 @@ const GameCard = () => {
   return (
     <>
       <Card isPressable onPress={onOpen} className='text-primary-700 w-full'>
-        <CardHeader className='flex items-start gap-3 flex'>
+        <CardHeader className='flex items-start gap-2 sm:gap-3 flex'>
           <GameCardHeader />
         </CardHeader>
 
-        <CardBody className='flex flex-col gap-3'>
+        <CardBody className='flex flex-col gap-2 sm:gap-3'>
           <GameCardBody />
         </CardBody>
       </Card>
