@@ -21,8 +21,10 @@ export const MainTemplate = ({ children, menuItems }: MainTemplateProps) => {
         menuItems={menuItems}
       />
 
-      <div className='p-6 w-full sm:px-0 '>
-        <h1 className='text-3xl font-extrabold mb-6'>{activeRoute?.title}</h1>
+      <div className='p-3 sm:p-6 w-full sm:px-0 '>
+        <h1 className='text-xl mb-3 font-extrabold sm:mb-6 sm:text-3xl'>
+          {activeRoute?.title}
+        </h1>
         {children}
       </div>
     </section>
