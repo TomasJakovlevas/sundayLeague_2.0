@@ -17,7 +17,7 @@ export const MainTemplate = ({ children, menuItems }: MainTemplateProps) => {
   return (
     <section className='relative sm:flex sm:gap-8'>
       <InnerNavbar
-        className='sticky top-[64px] sm:hidden'
+        className='sticky top-[64px] z-30 sm:hidden'
         menuItems={menuItems}
       />
 
