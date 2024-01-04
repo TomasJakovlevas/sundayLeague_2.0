@@ -1,5 +1,6 @@
 import DateRanges from '@/components/DateRange/DateRange';
 import GameCard from '@/components/GameCard/GameCard';
+import { Select } from '@/components/Select/Select';
 import { MainTemplate } from '@/components/Templates/MainTemplate';
 import { Template } from '@/components/Templates/Template';
 import { mainPageRoutes } from '@/lib/routes';
@@ -16,8 +17,16 @@ export default async function Home() {
   return (
     <Template>
       <MainTemplate menuItems={mainPageRoutes}>
-        <div className='border mb-5'>
+        <div className='border mb-5 flex gap-3 items-center'>
+          <div className='w-[20px] h-[20px] border border-[red] '>
+            {
+              // TODO: filter icon
+            }
+          </div>
           <DateRanges />
+          <Select type='place' label='Place' />
+          <Select type='category' label='Category' />
+          {/* <Select type='boolean' label='Available' /> */}
         </div>
 
         <div className='border grid gap-3 grid-cols-1 md:gap-5 md:grid-cols-2'>

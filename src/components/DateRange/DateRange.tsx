@@ -28,12 +28,12 @@ const DateRanges = () => {
 
   return (
     <div className='flex items-center gap-3'>
-      <div className='w-[20px] h-[20px] border border-[red]'>
-        {
-          // TODO: filter icon
-        }
-      </div>
-      <Button variant='flat' onPress={onOpen} color='primary'>
+      <Button
+        variant='flat'
+        onPress={onOpen}
+        color='primary'
+        className='h-[48px] bg-primary-50'
+      >
         {`${getDateToString(state[0].startDate)} - ${getDateToString(
           state[0].endDate
         )}`}
