@@ -15,7 +15,7 @@ export const Select = ({ label, value, type }: SelectProps) => {
 
   const [selectValue, setSelectValue] = useState<Selection>(new Set([]));
 
-  const color = 'default';
+  const color = Array.from(selectValue).length ? 'primary' : 'default';
 
   return (
     <S
