@@ -1,6 +1,6 @@
 'use client';
 
-import { Select as S, SelectItem } from '@nextui-org/react';
+import { Select as S, SelectItem, Selection } from '@nextui-org/react';
 import { getPreset } from './SelectPresets';
 import { useState } from 'react';
 
@@ -13,11 +13,10 @@ type SelectProps = {
 export const Select = ({ label, value, type }: SelectProps) => {
   const preset = getPreset(type);
 
-  const [selectValue, setSelectValue] = useState(new Set([]));
+  const [selectValue, setSelectValue] = useState<Selection>(new Set([]));
 
   const color = 'default';
 
-  // setSelectValue((prev) => new Set([...prev]));
   return (
     <S
       items={preset?.items}
@@ -28,7 +27,7 @@ export const Select = ({ label, value, type }: SelectProps) => {
       color={color}
       size='sm'
       radius='md'
-      // onSelectionChange={setSelectValue}
+      onSelectionChange={setSelectValue}
     >
       {preset?.items.map((item) => (
         <SelectItem key={item.value} value={item.value} color={color}>
