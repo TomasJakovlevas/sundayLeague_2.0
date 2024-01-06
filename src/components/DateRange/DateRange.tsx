@@ -32,7 +32,7 @@ const DateRanges = () => {
         variant='flat'
         onPress={onOpen}
         color='primary'
-        className='h-[48px] bg-primary-50'
+        className='h-full bg-primary-50'
       >
         {`${getDateToString(state[0].startDate)} - ${getDateToString(
           state[0].endDate
