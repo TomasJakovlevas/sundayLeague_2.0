@@ -15,22 +15,25 @@ export const Select = ({ label, value, type }: SelectProps) => {
 
   const [selectValue, setSelectValue] = useState<Selection>(new Set([]));
 
-  const color = Array.from(selectValue).length ? 'primary' : 'default';
+  const variant = Array.from(selectValue).length ? 'flat' : 'bordered';
 
   return (
     <S
       items={preset?.items}
       label={label}
       className='max-w-xs w-28'
+      classNames={{
+        trigger: 'data-[hover]:hover:border-primary-500',
+      }}
       selectedKeys={selectValue}
-      variant='flat'
-      color={color}
+      variant={variant}
+      color={'primary'}
       size='sm'
       radius='md'
       onSelectionChange={setSelectValue}
     >
       {preset?.items.map((item) => (
-        <SelectItem key={item.value} value={item.value} color={color}>
+        <SelectItem key={item.value} value={item.value} color={'primary'}>
           {item.label}
         </SelectItem>
       ))}
