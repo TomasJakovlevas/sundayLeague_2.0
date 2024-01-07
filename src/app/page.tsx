@@ -1,9 +1,7 @@
-import DateRanges from '@/components/DateRange/DateRange';
+import { Filters } from '@/components/Filters/Filters';
 import GameCard from '@/components/GameCard/GameCard';
-import { Select } from '@/components/Select/Select';
 import { MainTemplate } from '@/components/Templates/MainTemplate';
 import { Template } from '@/components/Templates/Template';
-import { ToggleButton } from '@/components/ToggleButton/ToggleButton';
 import { mainPageRoutes } from '@/lib/routes';
 
 const getGames = async () => {
@@ -18,18 +16,8 @@ export default async function Home() {
   return (
     <Template>
       <MainTemplate menuItems={mainPageRoutes}>
-        <div className='mb-5 flex gap-3 items-stretch'>
-          <div className='flex items-center'>
-            <div className='w-[20px] h-[20px] border border-[red] '>
-              {
-                // TODO: filter icon
-              }
-            </div>
-          </div>
-          <DateRanges />
-          <Select type='place' label='Place' />
-          <Select type='category' label='Category' />
-          <ToggleButton />
+        <div className='mb-5 flex items-stretch h-[38px] sm:h-[50px]'>
+          <Filters />
         </div>
 
         <div className='border grid gap-3 grid-cols-1 md:gap-5 md:grid-cols-2'>
