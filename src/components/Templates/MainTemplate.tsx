@@ -21,7 +21,7 @@ export const MainTemplate = ({ children, menuItems }: MainTemplateProps) => {
         menuItems={menuItems}
       />
 
-      <div className='p-3 sm:p-6 w-full sm:px-0 '>
+      <div className='p-3 sm:p-6 w-full sm:px-0 sm:w-[calc(100%-200px)] '>
         <h1 className='text-xl mb-3 font-extrabold sm:mb-6 sm:text-3xl'>
           {activeRoute?.title}
         </h1>

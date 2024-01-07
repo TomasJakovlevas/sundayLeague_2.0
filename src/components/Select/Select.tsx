@@ -21,14 +21,14 @@ export const Select = ({ label, value, type }: SelectProps) => {
     <S
       items={preset?.items}
       label={label}
-      className='max-w-xs w-28'
+      className='min-w-[120px] w-[120px]'
       classNames={{
-        trigger: 'data-[hover]:hover:border-primary-500',
+        trigger: 'data-[hover]:hover:border-primary-500 h-full',
+        mainWrapper: 'h-full',
       }}
       selectedKeys={selectValue}
       variant={variant}
       color={'primary'}
-      size='sm'
       radius='md'
       onSelectionChange={setSelectValue}
     >

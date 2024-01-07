@@ -63,7 +63,7 @@ export const InnerNavbar = ({ menuItems, ...rest }: CustomDivProps) => {
         </Navbar>
       </div>
 
-      <div className='hidden sm:block mt-6 sticky top-[88px] h-full w-1/4 border-small rounded-small px-1 py-2'>
+      <div className='hidden sm:block mt-6 sticky top-[88px] h-full w-[200px] border-small rounded-small px-1 py-2'>
         <Listbox
           aria-label='Actions'
           onAction={(key) => router.push(key.toString())}
