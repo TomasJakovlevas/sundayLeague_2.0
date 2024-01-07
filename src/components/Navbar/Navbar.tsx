@@ -25,6 +25,7 @@ import { useUser, useClerk } from '@clerk/nextjs';
 import useNavbarScroll from '@/hooks/useNavbarScroll';
 import SundayLeagueLogo from '@/assets/icons/sundayLeague.svg';
 import { mainNavRoutes } from '@/lib/routes';
+import { SearchModal } from '../SearchModal/SearchModal';
 
 export const Navbar = () => {
   const { isSignedIn, user } = useUser();
@@ -50,6 +51,9 @@ export const Navbar = () => {
           <SundayLeagueLogo className='h-7 w-[18px] sm:h-10 sm:w-[25px]' />
         </Link>
       </NavbarBrand>
+
+      <SearchModal />
+
       <NavbarMenuToggle
         aria-label={menuIsOpen ? 'Close menu' : 'Open menu'}
         className='sm:hidden'
