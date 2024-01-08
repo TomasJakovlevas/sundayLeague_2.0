@@ -1,6 +1,5 @@
 import {
   Button,
-  Divider,
   Input,
   Modal,
   ModalBody,
@@ -47,10 +46,12 @@ export const SearchModal = () => {
             </div>
             <Input
               type='text'
-              size={'sm'}
               variant={'underlined'}
               color='primary'
               placeholder='Search'
+              classNames={{
+                input: 'text-md',
+              }}
             />
           </ModalHeader>
           <ModalBody>
