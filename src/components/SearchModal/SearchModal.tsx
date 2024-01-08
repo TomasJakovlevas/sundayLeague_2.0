@@ -50,7 +50,7 @@ export const SearchModal = () => {
               color='primary'
               placeholder='Search'
               classNames={{
-                input: 'text-md',
+                input: 'sm:text-md',
               }}
             />
           </ModalHeader>
