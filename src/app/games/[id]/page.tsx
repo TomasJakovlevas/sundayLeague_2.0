@@ -1,5 +1,4 @@
 import { Template } from '@/components/Templates/Template';
-import { useRouter } from 'next/navigation';
 
 type PageType = {
   params: {
