@@ -1,6 +1,10 @@
 import { Button } from '@nextui-org/react';
 
-export const GameCardBody = () => {
+type GameCardProps = {
+  hasButton?: boolean; // TODO: better pass function and validate if button should be visible with that
+};
+
+export const GameCardBody = ({ hasButton }: GameCardProps) => {
   return (
     <>
       <div className='flex flex-row gap-2 items-center whitespace-nowrap sm:gap-3'>
@@ -38,9 +42,11 @@ export const GameCardBody = () => {
           }
         </div>
         <span className='text-base font-semibold sm:text-lg'>3/14</span>
-        {/* <Button size='sm' variant='flat' color='primary'>
-          Join
-        </Button> */}
+        {hasButton && (
+          <Button size='sm' variant='flat' color='primary'>
+            Join
+          </Button>
+        )}
       </div>
     </>
   );

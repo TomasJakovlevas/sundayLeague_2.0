@@ -10,7 +10,7 @@ export const GameCardPreview = () => {
       </div>
 
       <div className='flex flex-col py-3 gap-2 sm:gap-3'>
-        <GameCardBody />
+        <GameCardBody hasButton />
         <GameCardList />
       </div>
     </div>
