@@ -2,20 +2,16 @@ import { LinkType } from '@/types';
 
 export const mainNavRoutes: LinkType[] = [
   {
-    title: 'Dashboard',
-    route: '/dashboard',
+    title: 'Groups',
+    route: '/groups',
+  },
+  {
+    title: 'My games',
+    route: '/my-games',
   },
 ];
 
 export const mainPageRoutes: LinkType[] = [
-  {
-    title: 'Home',
-    route: '/',
-  },
-  //   {
-  //     title: 'Upcoming games',
-  //     route: '/upcoming-games',
-  //   },
   {
     title: 'Groups',
     route: '/groups',
@@ -23,5 +19,16 @@ export const mainPageRoutes: LinkType[] = [
   {
     title: 'My games',
     route: '/my-games',
+  },
+];
+
+export const myGamesRoutes: LinkType[] = [
+  {
+    title: 'Games',
+    route: '/games',
+  },
+  {
+    title: 'Create game',
+    route: '/my-games/create-game',
   },
 ];

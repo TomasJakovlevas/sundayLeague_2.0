@@ -51,7 +51,9 @@ export const InnerNavbar = ({ menuItems, ...rest }: CustomDivProps) => {
                   onClick={() => router.push(item.route)}
                   key={item.route}
                   className={`w-[calc(100vw-40px)] ${
-                    item.route === pathname ? 'border border-primary-500' : ''
+                    item.route.split('/')[1] === pathname.split('/')[1]
+                      ? 'border border-primary-500'
+                      : ''
                   }`}
                   textValue='Menu Item'
                   title={item.title}
@@ -75,7 +77,7 @@ export const InnerNavbar = ({ menuItems, ...rest }: CustomDivProps) => {
             <ListboxItem
               key={item.route}
               className={`${
-                item.route === pathname
+                item.route.split('/')[1] === pathname.split('/')[1]
                   ? 'border border-[2px] border-primary-500'
                   : ''
               }`}
