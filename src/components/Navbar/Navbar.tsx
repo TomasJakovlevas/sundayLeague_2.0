@@ -66,7 +66,7 @@ export const Navbar = () => {
         {mainNavRoutes.map((item, index) => (
           <NavbarItem
             key={`${item.title}-${index}`}
-            isActive={item.route === pathname}
+            isActive={item.route.split('')[1] === pathname.split('')[1]}
           >
             <Link href={item.route}>{item.title}</Link>
           </NavbarItem>
@@ -114,7 +114,7 @@ export const Navbar = () => {
         {mainNavRoutes.map((item, index) => (
           <NavbarMenuItem
             key={`${item.title}-${index}`}
-            isActive={item.route === pathname}
+            isActive={item.route.split('')[1] === pathname.split('')[1]}
           >
             <Link className='w-full' href={item.route}>
               {item.title}
