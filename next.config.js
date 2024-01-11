@@ -8,6 +8,16 @@ const nextConfig = {
 
     return config;
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/my-games',
+        destination: '/my-games/games',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
