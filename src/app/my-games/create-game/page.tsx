@@ -6,7 +6,18 @@ export default function Page() {
   return (
     <Template>
       <MainTemplate menuItems={myGamesRoutes}>
-        <div>CREATE GAME FORM</div>
+        <div>
+          <div className='border w-fit p-3 rounded-small'>
+            <div>Date: Input</div>
+            <div>Type: Input</div>
+            <div>Place: Input</div>
+            <div>Players: Input</div>
+            <div>Players: Input</div>
+            <div>Price: Input</div>
+            <div>Price: Input</div>
+            <div>Price: Input</div>
+          </div>
+        </div>
       </MainTemplate>
     </Template>
   );
