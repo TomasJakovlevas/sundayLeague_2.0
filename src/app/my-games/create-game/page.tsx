@@ -12,7 +12,7 @@ export default function Page() {
     <Template>
       <MainTemplate menuItems={myGamesRoutes}>
         <form>
-          <div className='border border-primary-500 flex flex-col items-center p-6 gap-6 rounded-small w-1/2 '>
+          <div className='border border-primary-200 flex flex-col items-center p-6 gap-6 rounded-small w-1/2 '>
             <div className='flex w-full'>
               <div className='flex h-[50px]'>
                 <Calendar />
@@ -26,7 +26,7 @@ export default function Page() {
                 <Input
                   type='number'
                   labelPlacement='inside'
-                  label='Player amount'
+                  label='Number of players'
                   variant='bordered'
                   isClearable
                 />
