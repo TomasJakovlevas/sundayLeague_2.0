@@ -5,6 +5,7 @@ import { Template } from '@/components/Templates/Template';
 import { myGamesRoutes } from '@/lib/routes';
 import { Button } from '@nextui-org/react';
 import { Input } from '@/components/Input/Input';
+import { Calendar } from '@/components/Calendar/Calendar';
 
 export default function Page() {
   return (
@@ -14,7 +15,7 @@ export default function Page() {
           <div className='border border-primary-500 flex flex-col items-center p-6 gap-6 rounded-small w-1/2 '>
             <div className='flex w-full'>
               <div className='flex h-[50px]'>
-                <DateRanges />
+                <Calendar />
               </div>
             </div>
             <div className='flex gap-5 h-[50px] w-full'>
