@@ -12,8 +12,10 @@ export const Input = ({ ...rest }: InputProps) => {
       {...rest}
       variant={variant}
       value={value}
-      color='primary'
       onValueChange={setValue}
+      color='primary'
+      // isInvalid={true}
+      // errorMessage='Input is invalid'
     />
   );
 };
