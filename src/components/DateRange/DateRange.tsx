@@ -13,7 +13,7 @@ const DateRanges = () => {
   const [state, setState] = useState<any>([
     {
       startDate: new Date(),
-      endDate: addDays(new Date(), 7),
+      endDate: addDays(new Date(), 6),
       key: 'selection',
     },
   ]);
