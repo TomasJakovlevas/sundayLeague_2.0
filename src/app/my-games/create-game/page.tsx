@@ -48,9 +48,11 @@ export default function Page() {
                   render={({ field }) => (
                     <Select
                       {...field}
-                      {...register('category')}
+                      {...register('category', { required: true })}
                       type='category'
                       label='Category'
+                      isInvalid={!!errors?.category}
+                      errorMessage={!!errors?.category && 'Enter category'}
                     />
                   )}
                 />
@@ -62,12 +64,16 @@ export default function Page() {
                   render={({ field }) => (
                     <Input
                       {...field}
-                      {...register('number_of_players')}
+                      {...register('number_of_players', { required: true })}
                       type='number'
                       labelPlacement='inside'
                       label='Number of players'
                       variant='bordered'
                       isClearable
+                      isInvalid={!!errors?.number_of_players}
+                      errorMessage={
+                        !!errors?.number_of_players && 'Enter number of players'
+                      }
                     />
                   )}
                 />
@@ -81,11 +87,13 @@ export default function Page() {
                   render={({ field }) => (
                     <Input
                       {...field}
-                      {...register('place')}
+                      {...register('place', { required: true })}
                       type='text'
                       labelPlacement='inside'
                       label='Place'
                       isClearable
+                      isInvalid={!!errors?.place}
+                      errorMessage={!!errors?.place && 'Enter place'}
                     />
                   )}
                 />
@@ -97,18 +105,20 @@ export default function Page() {
                   render={({ field }) => (
                     <Input
                       {...field}
-                      {...register('price')}
+                      {...register('price', { required: true })}
                       type='number'
                       labelPlacement='inside'
                       label='Price'
                       endContent='€'
                       isClearable
+                      isInvalid={!!errors?.price}
+                      errorMessage={!!errors?.price && 'Enter price'}
                     />
                   )}
                 />
               </div>
             </div>
-            <div className='flex w-full'>
+            <div className='flex h-[50px] w-full'>
               <Controller
                 name='note'
                 control={control}
