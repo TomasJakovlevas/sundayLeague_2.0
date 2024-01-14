@@ -17,8 +17,6 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         value={value}
         onValueChange={setValue}
         color='primary'
-        // isInvalid={true}
-        // errorMessage='Input is invalid'
       />
     );
   }
