@@ -4,19 +4,17 @@ import {
   Select as S,
   SelectItem,
   Selection,
-  SkeletonProps,
+  SelectProps as Sprops,
 } from '@nextui-org/react';
 import { getPreset } from './SelectPresets';
 import { forwardRef, useState } from 'react';
 
-type SelectProps = {
-  label: string;
-  value?: string;
+type SelectProps = Partial<Sprops> & {
   type: string;
 };
 
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
-  ({ label, value, type, ...rest }, ref) => {
+  ({ type, isInvalid, ...rest }, ref) => {
     const preset = getPreset(type);
 
     const [selectValue, setSelectValue] = useState<Selection>(new Set([]));
@@ -28,15 +26,18 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {...rest}
         ref={ref}
         items={preset?.items}
-        label={label}
         className='min-w-[120px] w-[120px]'
         classNames={{
-          trigger: 'data-[hover]:hover:border-primary-500 h-full',
+          trigger: `h-full ${
+            isInvalid
+              ? 'data-[hover]:hover:border-danger-500 border-danger-500'
+              : 'data-[hover]:hover:border-primary-500'
+          }`,
           mainWrapper: 'h-full',
         }}
         selectedKeys={selectValue}
         variant={variant}
-        color={'primary'}
+        color={isInvalid ? 'danger' : 'primary'}
         radius='md'
         onSelectionChange={setSelectValue}
       >
