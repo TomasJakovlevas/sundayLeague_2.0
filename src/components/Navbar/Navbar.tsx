@@ -1,12 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
 
 import { Navbar as Nav, NavbarBrand } from '@nextui-org/react';
 
 import Link from 'next/link';
-import { useUser, useClerk } from '@clerk/nextjs';
 import useNavbarScroll from '@/hooks/useNavbarScroll';
 import SundayLeagueLogo from '@/assets/icons/sundayLeague.svg';
 import { mainNavRoutes } from '@/lib/routes';
