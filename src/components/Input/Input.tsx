@@ -1,6 +1,6 @@
 'use client';
 
-import { Input as Inp, InputProps } from '@nextui-org/react';
+import { Input as BaseInput, InputProps } from '@nextui-org/react';
 import { forwardRef, useState } from 'react';
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -10,7 +10,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const variant = value !== '' ? 'flat' : 'bordered';
 
     return (
-      <Inp
+      <BaseInput
         ref={ref}
         {...rest}
         variant={variant}
