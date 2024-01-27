@@ -20,6 +20,10 @@ export default function Page() {
     formState: { errors },
   } = useForm();
 
+  // resolvers npm
+
+  // yup, joi
+
   const onSubmit: SubmitHandler<Inputs> = (data: any) => {
     console.log(data);
   };
